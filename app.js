@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hiện Chữ "Chạy"</title>
-</head>
-<body>
-    <p id="chay-text"></p>
+// Import thư viện http
+const http = require('http');
 
-    <script>
-        // Chọn phần tử có id "chay-text"
-        var chayText = document.getElementById("chay-text");
+// Tạo một máy chủ HTTP
+const server = http.createServer((req, res) => {
+  // Thiết lập tiêu đề phản hồi HTTP
+  res.setHeader('Content-Type', 'text/plain');
+  res.statusCode = 200; // Mã trạng thái OK
 
-        // Thiết lập nội dung của phần tử thành "Chạy"
-        chayText.textContent = "Chạy";
-    </script>
-</body>
-</html>
+  // Gửi phản hồi cho trình duyệt
+  res.end('Hello, Justin Nguyen!\n');
+});
+
+// Lắng nghe cổng 3000 và địa chỉ localhost
+const port = 3000;
+const hostname = '127.0.0.1';
+server.listen(port, hostname, () => {
+  console.log(`Server is running at http://${hostname}:${port}/`);
+});
 
