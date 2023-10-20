@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200; // Mã trạng thái OK
 
   // Gửi phản hồi cho trình duyệt
-  res.end('Hello, Jenkins Pipeline!\n');
+  res.end('Hello, Jenkins Pipeline NodeJs!\n');
 });
 
 // Lắng nghe cổng 3000 và địa chỉ localhost
